@@ -1,0 +1,36 @@
+# Virtual env
+venv/
+
+# IDE
+.idea/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Build
+build/
+dist/
+*.spec
+
+# Images / temp
+*.jpg
+*.png
+temp/
+output/
+img/
+
+# Personal
+ascii_results/
+high_res_ascii/
+History_sasyon/
+F_for_tg_bot/
+
+# Other
+*.json
+*.txt
+!requirements-dev.txt   # ← вот это исключение
+
+# OS
+.DS_Store
+Thumbs.db

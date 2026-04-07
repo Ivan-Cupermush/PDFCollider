@@ -1,0 +1,47 @@
+repos:
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.4.4
+  hooks:
+    - id: ruff
+
+- repo: https://github.com/psf/black
+  rev: 24.4.2
+  hooks:
+    - id: black
+
+- repo: https://github.com/PyCQA/isort
+  rev: 5.13.2
+  hooks:
+    - id: isort
+
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v1.10.0
+  hooks:
+    - id: mypy
+
+- repo: https://github.com/PyCQA/bandit
+  rev: 1.7.9
+  hooks:
+    - id: bandit
+
+- repo: https://github.com/codespell-project/codespell
+  rev: v2.3.0
+  hooks:
+    - id: codespell
+
+- repo: https://github.com/PyCQA/pydocstyle
+  rev: 6.3.0
+  hooks:
+    - id: pydocstyle
+
+- repo: https://github.com/econchick/interrogate
+  rev: 1.7.0
+  hooks:
+    - id: interrogate
+#here was alex
+-   repo: https://github.com/jendrikseipp/vulture
+    rev: v2.16
+    hooks:
+    -   id: vulture
+        args: ["."]
+        exclude: ^(venv/|\.git/|\.github/|__pycache__/)
