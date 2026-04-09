@@ -68,3 +68,4 @@ htmlcov/
 # Ruff 
 .ruff_cache/ 
 !requirements.txt 
+!requirements.txt 
