@@ -1,0 +1,35 @@
+name: Code Quality Checks
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+      - name: Run checks
+        run: |
+          ruff check src/pdf_collider/PDF_Collider.py
+          black --check src/pdf_collider/PDF_Collider.py
+          isort --check-only src/pdf_collider/PDF_Collider.py
+          mypy src/pdf_collider/PDF_Collider.py
+          bandit -r src/pdf_collider/PDF_Collider.py
+          pip-audit --ignore-vuln PYSEC-2022-42969
+          radon cc src/pdf_collider/PDF_Collider.py -a -s
+          vulture src/pdf_collider/PDF_Collider.py
+          pydocstyle src/pdf_collider/PDF_Collider.py
+          interrogate -v src/pdf_collider/PDF_Collider.py
+          codespell src/pdf_collider/PDF_Collider.py

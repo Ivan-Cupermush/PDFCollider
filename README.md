@@ -12,6 +12,7 @@
 ![Doc Coverage](https://img.shields.io/badge/doccoverage-interrogate-blue)
 ![Spelling](https://img.shields.io/badge/spelling-codespell-blue)
 ![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen)
+![CI](https://github.com/Ivan-Cupermush/PDFCollider/actions/workflows/check.yml/badge.svg)
 
 PDFCollider — a desktop tool for processing images and exрorting them to PDF. Load multiple photos, apply perspective correction, rotation, flipping, and auto-contrast. Resize images individually or batch-adjust to target file size. Navigate with hotkeys, save in original lossless quality. Simple interface, professional results.
 
