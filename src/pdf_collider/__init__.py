@@ -1,1 +1,1 @@
-# PDF Collider package 
+# PDF Collider package

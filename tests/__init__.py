@@ -1,1 +1,1 @@
-# Tests for PDF Collider 
+# Tests for PDF Collider
