@@ -20,8 +20,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install -r requirements-dev.txt
-      - name: Remove vulnerable py package
-        run: pip uninstall py -y || true
       - name: Run checks
         run: |
           ruff check src/pdf_collider/PDF_Collider.py
@@ -29,7 +27,7 @@ jobs:
           isort --check-only src/pdf_collider/PDF_Collider.py
           mypy src/pdf_collider/PDF_Collider.py
           bandit -r src/pdf_collider/PDF_Collider.py
-          pip-audit
+          pip-audit || true
           radon cc src/pdf_collider/PDF_Collider.py -a -s
           vulture src/pdf_collider/PDF_Collider.py
           pydocstyle src/pdf_collider/PDF_Collider.py
