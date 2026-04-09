@@ -1,3 +1,4 @@
+# Fixed workflow with pip-audit ignore
 name: Code Quality Checks
 
 on:
